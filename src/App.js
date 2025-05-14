@@ -10,7 +10,6 @@ function App() {
     <>
       <Nav/>
       <Header/>
-      <BookingForm/>
       <h1>Little Lemon</h1>
     </>
   );
