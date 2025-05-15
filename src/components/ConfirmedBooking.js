@@ -4,7 +4,9 @@ const ConfirmedBooking = (props) => {
 
     return (
         <div className="confirm">
-            <h2>Booking <span>Confirmed!</span></h2>
+            <div>
+                <h1>Booking <span>Confirmed!</span></h1>
+            </div>
         </div>
     );
 }

@@ -7,7 +7,7 @@ const Nav = () => {
         setMenuOpen(!menuOpen);
     }
     return (
-        <nav className={'navbar ${menuOpen ? "open" : ""}'}>
+        <nav className={`navbar ${menuOpen ? "open" : ""}`}>
             <h1>Little Lemon</h1>
             <a href="/" className="logo">
                 <img src={logo} alt="Little Lemon Logo"/>
@@ -19,7 +19,7 @@ const Nav = () => {
                 <div className="bar"></div>
             </div>
 
-            <ul className={'nav-links ${menuOpen ? "visible" : ""}'}>
+            <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/menu">Services</a></li>
