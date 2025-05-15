@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookingForm = () => {
+const BookingForm = (props) => {
     const [date, setDate] = React.useState("");
     const [times, setTimes] = React.useState("");
     const [guests, setGuests] = React.useState("");
@@ -14,12 +14,12 @@ const BookingForm = () => {
 
     const handleChange = (event) => {
         setDate(event);
-        this.props.dispatch(event)
+        props.dispatch(event)
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.SubmitForm(event);
+        props.submitForm(event);
         //console.log("Form submitted:", formData);
     };
 
@@ -30,15 +30,15 @@ const BookingForm = () => {
                     <fieldset>
                         <div>
                             <label htmlFor='book-date'>Choose Date</label>
-                            <input id="book-date" type="date" name="date" value={date} onChange={(event) => handleChange(event.target.value)} required />
+                            <input id="book-date" type="date" value={date} onChange={(event) => handleChange(event.target.value)} required />
                         </div>
 
                         <div>
                             <label htmlFor='book-time'>Choose Time</label>
-                            <select id="book-time" name="time" value={times} onChange={(event) => setTimes(event.target.value)} required >
+                            <select id="book-time" value={times} onChange={(event) => setTimes(event.target.value)} required >
                                 <option value="">Select a time</option>
                                 {
-                                    props.availableTimes.availableTimes.map(availableTimes =>{
+                                    props.availableTimes.availableTimes.map(availableTimes => {
                                         return <option key={availableTimes}>{availableTimes}</option>
                                     })
                                 }
@@ -47,14 +47,14 @@ const BookingForm = () => {
 
                         <div>
                             <label htmlFor='book-guests'>Number of Guests</label>
-                            <input id="book-guests" name="guests" min='1' value={guests} onChange={(event) => setGuests(event.target.value)} required />
+                            <input id="book-guests" name="guests" min='1' value={guests} onChange={(event) => setGuests(event.target.value)} />
                         </div>
 
                         <div>
                             <label htmlFor='book-occasion'>Occasion:</label>
-                            <select id="book-occasion" name="occasion" key={occasion} value={occasion} onChange={(event) => setOccasion(event.target.value)} required >
-                                <option value="">Birthday</option>
-                                <option value="">Anniversary</option>
+                            <select id="book-occasion" name="occasion" key={occasion} value={occasion} onChange={(event) => setOccasion(event.target.value)}>
+                                <option>Birthday</option>
+                                <option>Anniversary</option>
                             </select>
                         </div>
 
